@@ -1,6 +1,6 @@
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/ebd/service-worker.js").then((registration) => {
+    navigator.serviceWorker.register("https://ivaldof.github.io/ebd/").then((registration) => {
       console.log("Service Worker registrado com sucesso!", registration);
 
       // Verifica se há uma nova versão do Service Worker disponível
