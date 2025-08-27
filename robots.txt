@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://ivaldof.github.io/ebd/sitemap.xml
