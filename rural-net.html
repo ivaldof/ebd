@@ -59,6 +59,122 @@
   height: 100%;
   border: 0;
 }
+
+  /* Estilos da Galeria Corrigidos */
+        .galeria {
+            width: 100%;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .galeria-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 400px;
+        }
+        
+        .galeria-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .galeria-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .galeria-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 51, 102, 0.7);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .galeria-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        
+        .galeria-nav button {
+            background: rgba(0, 51, 102, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        
+        .galeria-nav button:hover {
+            background: rgba(0, 51, 102, 0.9);
+        }
+        
+        .galeria-indicadores {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .indicador {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .indicador.ativo {
+            background: white;
+        }
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .combo, .tecnico {
+                width: 48%;
+            }
+            
+            .galeria-container {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .combo, .tecnico {
+                width: 100%;
+            }
+            
+            .galeria-container {
+                height: 200px;
+            }
+        }
   </style>
 </head>
 <body>
@@ -90,7 +206,7 @@
             <div class="amount">R$ 62,99 / mês</div>
             <ul style="margin:0;padding-left:18px;color:var(--muted)">
               <li>Instalação grátis (promoção)</li>
-              <li>Roteador incluso</li>
+              <li>Roteador inclusos</li>
               <li>Suporte via WhatsApp</li>
             </ul>
             <a class="cta" href="#contato" onclick="selectPlan('100 Mbps', '62,99')">Assinar</a>
@@ -131,9 +247,8 @@
       <aside class="card">
         <h3>Cobertura</h3>
         <p style="color:var(--muted)">Cobrimos toda a área de <strong>Goianinha/RN</strong>, incluindo zona rural. Se sua localidade é afastada, consulte disponibilidade.</p>
-        </div>
-  <div class="map-responsive">
-<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d31727.8044197955!2d-35.2120673!3d-6.2669455!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1759235850532!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-responsive">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d31727.8044197955!2d-35.2120673!3d-6.2669455!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1759235850532!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <h4 style="margin-top:12px">Contato rápido</h4>
@@ -187,6 +302,40 @@
     </section>
 
   </main>
+  
+  <div class="container">
+    <!-- Galeria de Fotos Automática -->
+    <div class="galeria">
+      <div class="galeria-container">
+        <div class="galeria-slide">
+          <img src="https://ivaldof.github.io/ebd/imagens/1.jpg" alt="Treinamento Rural-net">
+          <div class="galeria-caption">Goianinha/RN</div>
+        </div>
+        <div class="galeria-slide">
+          <img src="https://ivaldof.github.io/ebd/imagens/2.jpg" alt="Treinamento Rural-net">
+          <div class="galeria-caption">Goianinha/RN</div>
+        </div>
+        <div class="galeria-slide">
+          <img src="https://ivaldof.github.io/ebd/imagens/3.jpg" alt="Treinamento Rural-net">
+          <div class="galeria-caption">Goianinha/RN</div>
+        </div>
+        <div class="galeria-slide">
+          <img src="https://ivaldof.github.io/ebd/imagens/4.jpg" alt="Treinamento Rural-net">
+          <div class="galeria-caption">Goianinha/RN</div>
+        </div>
+      </div>
+      <div class="galeria-nav">
+        <button class="galeria-prev">&#10094;</button>
+        <button class="galeria-next">&#10095;</button>
+      </div>
+      <div class="galeria-indicadores">
+        <div class="indicador ativo"></div>
+        <div class="indicador"></div>
+        <div class="indicador"></div>
+        <div class="indicador"></div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
@@ -214,6 +363,69 @@
       // Aqui você pode integrar com sua API, enviar por e-mail ou salvar no banco.
       alert('Pedido enviado!\n' + JSON.stringify(data, null, 2));
     }
+
+    // JavaScript para a galeria de imagens
+    document.addEventListener('DOMContentLoaded', function() {
+      const galeriaContainer = document.querySelector('.galeria-container');
+      const slides = document.querySelectorAll('.galeria-slide');
+      const prevButton = document.querySelector('.galeria-prev');
+      const nextButton = document.querySelector('.galeria-next');
+      const indicadores = document.querySelectorAll('.indicador');
+      
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+      
+      // Função para atualizar a galeria
+      function updateGaleria() {
+        galeriaContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Atualizar indicadores
+        indicadores.forEach((indicador, index) => {
+          if (index === currentIndex) {
+            indicador.classList.add('ativo');
+          } else {
+            indicador.classList.remove('ativo');
+          }
+        });
+      }
+      
+      // Eventos para os botões de navegação
+      prevButton.addEventListener('click', function() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalSlides - 1;
+        updateGaleria();
+      });
+      
+      nextButton.addEventListener('click', function() {
+        currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
+        updateGaleria();
+      });
+      
+      // Eventos para os indicadores
+      indicadores.forEach((indicador, index) => {
+        indicador.addEventListener('click', function() {
+          currentIndex = index;
+          updateGaleria();
+        });
+      });
+      
+      // Auto-play para a galeria (opcional)
+      let autoPlay = setInterval(function() {
+        currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
+        updateGaleria();
+      }, 5000);
+      
+      // Pausar auto-play ao interagir com a galeria
+      galeriaContainer.addEventListener('mouseenter', function() {
+        clearInterval(autoPlay);
+      });
+      
+      galeriaContainer.addEventListener('mouseleave', function() {
+        autoPlay = setInterval(function() {
+          currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
+          updateGaleria();
+        }, 5000);
+      });
+    });
   </script>
 </body>
 </html>
