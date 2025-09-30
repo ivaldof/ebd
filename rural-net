@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rural-net — Internet para Goianinha/RN</title>
+  <meta name="description" content="Rural-net | Planos de internet para Goianinha/RN e zona rural — 100MB, 200MB e 300MB com instalação rápida." />
+  <style>
+    :root{--primary:#0f71ff;--accent:#06b6d4;--bg:#f7f9fc;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.4;margin:0;background:var(--bg);color:#0f172a}
+    header{background:linear-gradient(90deg,var(--primary),#2b6cb0);color:white;padding:28px 18px}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:white;color:var(--primary);display:grid;place-items:center;font-weight:700}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:8px 0 0;color:rgba(255,255,255,0.92)}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+    @media(min-width:880px){.hero{grid-template-columns:1fr 420px}}
+
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .price-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:640px){.price-grid{grid-template-columns:repeat(3,1fr)}}
+
+    .plan{border:1px solid rgba(15,23,42,0.05);padding:18px;border-radius:10px;display:flex;flex-direction:column;gap:12px}
+    .plan h3{margin:0;font-size:1.05rem}
+    .speed{font-weight:800;font-size:1.4rem}
+    .amount{font-weight:900;font-size:1.2rem;color:var(--primary)}
+    .cta{background:var(--primary);color:white;padding:10px;border-radius:8px;text-align:center;text-decoration:none;display:inline-block}
+
+    .features{display:flex;flex-direction:column;gap:10px}
+    .feature{display:flex;gap:10px;align-items:flex-start}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
+
+    .coverage{display:flex;flex-direction:column;gap:12px}
+    .map-placeholder{height:200px;border-radius:8px;background:linear-gradient(135deg,#eef2ff,#f0fdf4);display:grid;place-items:center;color:var(--muted)}
+
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+    form .row{display:grid;grid-template-columns:1fr;gap:8px}
+    @media(min-width:640px){form .row{grid-template-columns:1fr 1fr}}
+    footer{padding:18px 0;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    .badge{display:inline-block;background:rgba(255,255,255,0.12);padding:6px 10px;border-radius:999px;font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="logo">RN</div>
+        <div>
+          <h1>Rural-net</h1>
+          <p class="lead">Internet dedicada para Goianinha/RN — cobertura também na zona rural</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:18px">
+    <section class="hero">
+      <div class="card">
+        <h2>Planos e preços</h2>
+        <p style="color:var(--muted)">Escolha o combo que melhor atende sua família ou negócio. Sem fidelidade — suporte local e instalação rápida.</p>
+
+        <div class="price-grid" style="margin-top:14px">
+          <div class="plan">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Combo 100 Mbps</h3>
+              <span class="badge">Melhor custo</span>
+            </div>
+            <div class="speed">100 Mbps</div>
+            <div class="amount">R$ 62,99 / mês</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Instalação grátis (promoção)</li>
+              <li>Roteador incluso</li>
+              <li>Suporte via WhatsApp</li>
+            </ul>
+            <a class="cta" href="#contato" onclick="selectPlan('100 Mbps', '62,99')">Assinar</a>
+          </div>
+
+          <div class="plan">
+            <h3>Combo 200 Mbps</h3>
+            <div class="speed">200 Mbps</div>
+            <div class="amount">R$ 89,99 / mês</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Conexão estável para streaming</li>
+              <li>Suporte técnico local</li>
+              <li>Prioridade em atendimentos</li>
+            </ul>
+            <a class="cta" href="#contato" onclick="selectPlan('200 Mbps', '89,99')">Assinar</a>
+          </div>
+
+          <div class="plan">
+            <h3>Combo 300 Mbps</h3>
+            <div class="speed">300 Mbps</div>
+            <div class="amount">R$ 202,99 / mês</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Ideal para empresas e vários usuários</li>
+              <li>Instalação com antena direcional</li>
+              <li>Suporte 24/7 (prioritário)</li>
+            </ul>
+            <a class="cta" href="#contato" onclick="selectPlan('300 Mbps', '202,99')">Assinar</a>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="features">
+          <div class="feature"><div class="dot"></div><div><strong>Sem fidelidade</strong> — cancele quando quiser.</div></div>
+          <div class="feature"><div class="dot"></div><div><strong>Instalação local</strong> por técnicos de Goianinha/RN.</div></div>
+          <div class="feature"><div class="dot"></div><div><strong>Cobertura rural</strong> — levamos internet para áreas afastadas da cidade.</div></div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Cobertura</h3>
+        <p style="color:var(--muted)">Cobrimos toda a área de <strong>Goianinha/RN</strong>, incluindo zona rural. Se sua localidade é afastada, consulte disponibilidade.</p>
+        <div class="map-placeholder">Mapa de cobertura (placeholder)</div>
+
+        <h4 style="margin-top:12px">Contato rápido</h4>
+        <p style="margin:6px 0;color:var(--muted)">Ligue ou envie mensagem pelo WhatsApp para agendar instalação.</p>
+        <p style="margin:6px 0"><strong>Telefone:</strong> (84) 9XXXX-XXXX</p>
+        <p style="margin:6px 0"><strong>WhatsApp:</strong> <a href="https://wa.me/(84)988935796" target="_blank">Abrir conversa</a></p>
+
+        <h4 style="margin-top:12px">Horário de atendimento</h4>
+        <p style="margin:6px 0;color:var(--muted)">Seg — Sex: 08:00 — 18:00<br>Sáb: 08:00 — 12:00</p>
+      </aside>
+    </section>
+
+    <section style="margin-top:18px" class="card">
+      <h3>Perguntas frequentes</h3>
+      <details>
+        <summary>Qual o prazo para instalação?</summary>
+        <p style="margin:8px 0;color:var(--muted)">Normalmente até 5 dias úteis, dependendo da distância e da visada para antena.</p>
+      </details>
+      <details>
+        <summary>Preciso de permissão para instalar antena?</summary>
+        <p style="margin:8px 0;color:var(--muted)">Em propriedades particulares normalmente não. Em condomínios ou terrenos especiais, consulte orientações.</p>
+      </details>
+    </section>
+
+    <section id="contato" style="margin-top:18px" class="card">
+      <h3>Solicitar contato</h3>
+      <p style="color:var(--muted)">Preencha os dados que entraremos em contato para confirmar disponibilidade e agendar instalação.</p>
+      <form onsubmit="event.preventDefault(); sendForm();" style="margin-top:12px">
+        <div class="row">
+          <input type="text" id="nome" placeholder="Nome completo" required />
+          <input type="tel" id="telefone" placeholder="Telefone/WhatsApp" required />
+        </div>
+        <div style="margin-top:8px">
+          <input type="text" id="endereco" placeholder="Endereço (cidade, bairro ou sítio)" required />
+        </div>
+        <div style="margin-top:8px">
+          <select id="plano" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef">
+            <option value="100 Mbps">Combo 100 Mbps — R$ 62,99</option>
+            <option value="200 Mbps">Combo 200 Mbps — R$ 89,99</option>
+            <option value="300 Mbps">Combo 300 Mbps — R$ 202,99</option>
+          </select>
+        </div>
+        <div style="margin-top:8px">
+          <textarea id="mensagem" rows="3" placeholder="Mensagem (opcional)"></textarea>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="cta" type="submit">Enviar pedido</button>
+          <a class="cta" href="tel:(84)988935796" style="background:#10b981">Ligar agora</a>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Rural-net — Goianinha/RN · Cobrimos zona rural</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function selectPlan(name, price){
+      document.getElementById('plano').value = name;
+      document.getElementById('nome').focus();
+      window.location.hash = '#contato';
+    }
+
+    function sendForm(){
+      const data = {
+        nome: document.getElementById('nome').value,
+        telefone: document.getElementById('telefone').value,
+        endereco: document.getElementById('endereco').value,
+        plano: document.getElementById('plano').value,
+        mensagem: document.getElementById('mensagem').value
+      };
+      // Aqui você pode integrar com sua API, enviar por e-mail ou salvar no banco.
+      alert('Pedido enviado!\n' + JSON.stringify(data, null, 2));
+    }
+  </script>
+</body>
+</html>
