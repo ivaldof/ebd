@@ -1,7 +1,7 @@
 {
   "name": "app-ebd",
   "short_name": "app-ebd",
-  "start_url": "https://www.escola-ebd.com/p/blog-page_16.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
